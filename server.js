@@ -1,6 +1,7 @@
 // Dependencies
 const express = require("express");
 const mongoose = require("mongoose");
+const teacherRouter = require("./controller/teacher");
 
 //initial the application
 const app = express();
@@ -17,7 +18,9 @@ mongoose.connect(DATABASE_URL);
 const db = mongoose.connection;
 db.on("error", (err) => console.log(err.message + " is mongo not running?"));
 db.on("connected", () => console.log("mongoDB connected"));
-// routes
+
+//middleware
+app.use(teacherRouter);
 
 //Listerning
 app.listen(PORT, () => {

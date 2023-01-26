@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="showPImg"><img src="<%=teacher.img%>" style="height:100px;width:100px"></div>
+    Name: <%=teacher.name%>
+    <div class="showDetails">
+      <li>Highest Degree: <%=teacher.mame%></li>
+      <li>Current Jobs: <%=teacher.currentJob%></li>
+      <li>Subjects: <%=teacher.subjects%></li>
+      <li>Avaliable Time: <%=teacher.availableTime%></li>
+      <li>Accep New Student? <%=teacher.acceptNewStus%></li>
+    </div>
+    <form action="/teachers">
+        <input type="submit" value="See Other Teacher" />
+  </body>
+</html>
