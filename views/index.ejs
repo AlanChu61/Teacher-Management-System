@@ -14,23 +14,31 @@
         <li>Signup</li>
         <li>Login</li>
         <li>Logout</li>
-      </ul>
-
-      <div class = "teacherContainer">
+      </ul>    
+    </nav>
+    
+    <div class = "teacherContainer">
             <%teachers.forEach((teacher)=>{%>
                 <div class="teacher">
-                Name: <%=teacher.name%> </br>
-                Highest Degree: <%=teacher.highestDegree%> </br>
-                Subject: <%=teacher.subjects%></br>
+                    <div class="indeximg">
+                        <img src="<%=teacher.img%>" style="height: 60px; width:40-px" />
+                      </div>
 
-                <form action="/teachers/<%=teacher._id%>">
+<div class="indexTeacherInfo">
+    Name: <%=teacher.name%> </br>
+    Highest Degree: <%=teacher.highestDegree%> </br>
+    Subject: <%=teacher.subjects%></br>
+</div>                      
+<form action="/teachers/<%=teacher._id%>">
                     <input id="detailsBtn" type="submit" value="More Details" />
                   </form>
 
             <%})%>
         </div>
-
       </div>
-    </nav>
+
+    <form action="/teachers/new">
+        <input type="submit" value="Add New Teacher" />
+    </form>
   </body>
 </html>

@@ -1,3 +1,4 @@
+const { application } = require("express");
 const express = require("express");
 const router = express.Router();
 const data = require("../data");
@@ -15,24 +16,51 @@ router.get("/teachers/seed", (req, res) => {
 router.get("/", (req, res) => {
   res.redirect("/teachers");
 });
-//i
+//index
 router.get("/teachers", (req, res) => {
   Teacher.find({}, (error, allTeachers) => {
     // console.log(allTeachers);
     res.render("index.ejs", { teachers: allTeachers });
   });
 });
-//n
-//d
-//u
-//c
-//e
+//new
+router.get("/teachers/new", (req, res) => {
+  res.render("new.ejs");
+});
+
+//delete
+router.delete("/teachers/:objId", (req, res) => {
+  Teacher.findByIdAndDelete(req.params.objId, (error, deletebook) => {
+    res.redirect("/teachers");
+  });
+});
+//update
+router.put("/teachers/:objId", (req, res) => {
+  console.log(req.body);
+  const updateTeacher = req.body;
+  Teacher.findByIdAndUpdate(
+    req.params.objId,
+    updateTeacher,
+    (err, updatedTeacher) => {
+      console.log(err);
+      res.redirect(`/teachers`);
+    }
+  );
+});
+//create
+router.post("/teachers", (req, res) => {
+  const createdYeacher = req.body;
+  teacher.create(createdYeacher, (error, createdTeacher) => {
+    res.redirect("/");
+  });
+});
+//edit
 router.get("/teachers/:objId/edit", (req, res) => {
   Teacher.findById(req.params.objId, (error, foundTeacher) => {
     res.render("edit.ejs", { teacher: foundTeacher });
   });
 });
-//s
+//show
 router.get("/teachers/:objId", (req, res) => {
   Teacher.findById(req.params.objId, (error, foundTeacher) => {
     res.render("show.ejs", {

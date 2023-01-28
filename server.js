@@ -1,7 +1,9 @@
 // Dependencies
 const express = require("express");
 const mongoose = require("mongoose");
+const methodOverride = require("method-override");
 const teacherRouter = require("./controller/teacher");
+const { urlencoded } = require("express");
 
 //initial the application
 const app = express();
@@ -20,8 +22,9 @@ db.on("error", (err) => console.log(err.message + " is mongo not running?"));
 db.on("connected", () => console.log("mongoDB connected"));
 
 //middleware
+app.use(urlencoded({ extended: true }));
+app.use(methodOverride("_method"));
 app.use(teacherRouter);
-
 //Listerning
 app.listen(PORT, () => {
   console.log(`Server is listening on PORT: ${PORT}`);

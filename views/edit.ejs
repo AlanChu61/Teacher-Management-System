@@ -7,6 +7,12 @@
     <title>Document</title>
   </head>
   <body>
-    YYou are editting
+    <h1>You are editing<%=teacher.name%>'s info!</h1>
+    <form action="/teachers/<%= teacher._id %>?_method=PUT" method="POST">
+      <label
+        >Name:<input type="text" name="name" value="<%=teacher.name%>"
+      /></label>
+      <input type="submit" value="Edit" />
+    </form>
   </body>
 </html>
