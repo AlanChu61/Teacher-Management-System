@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>new</title>
-  </head>
+  <%- include("./partials/head") %>
   <body>
     <h1>You are adding new teacher</h1>
-    <form action="/teachers" method="post">
-      <label> Name: <input type="text" name="name" /> </label>
-      <label>
-        Highest Degree: <input type="text" name="highestDegree" />
-      </label>
-      <label> Photo: <input type="text" name="img" /> </label>
-      <label> Subjects: <input type="text" name="subjects" /> </label>
-      <label> Description: <input type="text" name="description" /> </label>
-      <input type="submit" value=" + " />
+    <form action="/teachers" method="post"> 
+      <div class="addNewTeacher">
+      <label> Name: <input type="text" name="name" /> </label> <br />
+      <label> Highest Degree: <input type="text" name="highestDegree" /> </label
+      ><br />
+      <label> Photo: <input type="text" name="img" /> </label><br />
+      <label> Subjects: <input type="text" name="subjects" /> </label><br />
+      <label> Description: <input type="text" name="description" /> </label
+      ><br />
+      <div class="btn"><input type="submit" value=" + " /></div>
+      
     </form>
+  </div>
   </body>
 </html>

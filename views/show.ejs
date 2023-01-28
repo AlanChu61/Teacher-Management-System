@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
+  <%- include("./partials/head") %>
   <body>
-    <div class="showImg">
-      <img src="<%=teacher.img%>" style="height: 100px; width: 100px" />
+    <div class="showTeacher center-in-center">
+      <div class="showImg">
+        <img src="<%=teacher.img%>" />
+      </div>
+      Name: <%=teacher.name%>
+      <div class="teacher">
+        <li>Highest Degree: <%=teacher.highestDegree%></li>
+        <li>Subjects: <%=teacher.subjects%></li>
+        <li>Description: <%=teacher.description%></li>
+      </div>
     </div>
-    Name: <%=teacher.name%>
-    <div class="showDetails">
-      <li>Highest Degree: <%=teacher.highestDegree%></li>
-      <li>Subjects: <%=teacher.subjects%></li>
+    <div class="showBtnContan">
       <form action="/teachers/<%=teacher.id%>/edit">
         <input type="submit" value="Edit" />
       </form>
@@ -22,7 +22,9 @@
       </form>
     </div>
     <form action="/teachers">
-      <input type="submit" value="See Other Teacher" />
+      <div class="btn">
+        <input type="submit" value="See Other Teacher" />
+      </div>
     </form>
   </body>
 </html>

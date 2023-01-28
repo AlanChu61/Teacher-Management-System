@@ -1,44 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HomePage</title>
-  </head>
+<%- include("./partials/head") %>
   <body>
     <h1>Welcome to GotCha Academy</h1>
     <nav>
-      <ul>
-        <li>HomePage</li>
-        <li>Signup</li>
-        <li>Login</li>
-        <li>Logout</li>
-      </ul>    
+        <a href="/teachers">HomePage</a>
+        <a href="/signup">Sign up</a>
+        <a href:"/">Login</a>
+        <a href:"/">Login out</a>      
     </nav>
     
     <div class = "teacherContainer">
             <%teachers.forEach((teacher)=>{%>
                 <div class="teacher">
                     <div class="indeximg">
-                        <img src="<%=teacher.img%>" style="height: 60px; width:40-px" />
+                        <img src="<%=teacher.img%>"/>
                       </div>
 
 <div class="indexTeacherInfo">
-    Name: <%=teacher.name%> </br>
-    Highest Degree: <%=teacher.highestDegree%> </br>
+    <%=teacher.name%> </br>
+    <%=teacher.highestDegree%> </br>
     Subject: <%=teacher.subjects%></br>
 </div>                      
 <form action="/teachers/<%=teacher._id%>">
                     <input id="detailsBtn" type="submit" value="More Details" />
                   </form>
-
+                </div>
             <%})%>
-        </div>
+        
       </div>
 
     <form action="/teachers/new">
-        <input type="submit" value="Add New Teacher" />
+      <div class = "btn" ><input id="addNewBtn"  type="submit" value="Add New Teacher" /></div>
+        
     </form>
   </body>
 </html>

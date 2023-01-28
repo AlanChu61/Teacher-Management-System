@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
+  <%- include("./partials/head") %>
   <body>
-    <h1>You are editing<%=teacher.name%>'s info!</h1>
-    <form action="/teachers/<%= teacher._id %>?_method=PUT" method="POST">
+    <h1>You are editing <%=teacher.name%>'s info!</h1>
+    <form action="/teachers/<%=teacher._id%>?_method=PUT" method="POST">
       <label
-        >Name:<input type="text" name="name" value="<%=teacher.name%>"
-      /></label>
+        >Name:<input type="text" name="name" value="<%=teacher.name%>" /></label
+      ><br />
+      <label
+        >Highest Degree:<input
+          type="text"
+          name="highestDegree"
+          value="<%=teacher.highestDegree%>" /></label
+      ><br />
+      <label
+        >Subjects:<input
+          type="text"
+          name="subjects"
+          value="<%=teacher.subjects%>" /></label
+      ><br />
+      <label
+        >Description:<input
+          type="text"
+          name="description"
+          value="<%=teacher.description%>" /></label
+      ><br />
       <input type="submit" value="Edit" />
     </form>
   </body>
