@@ -9,7 +9,7 @@ module.exports = [
   {
     name: "BlackTea Latea",
     highestDegree: "?",
-    img: "https://res.cloudinary.com/dnn0tzpjf/image/upload/v1674924441/%E7%B4%85%E8%8C%B6_lep9x3.jpg",
+    img: "https://res.cloudinary.com/dnn0tzpjf/image/upload/v1674924441/%E7%B4%85%E8%8C%B601.jpg",
     subjects: "Meowing, lying on the floor",
     description: "I am a good cat!",
   },

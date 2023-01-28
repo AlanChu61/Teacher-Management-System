@@ -20,7 +20,7 @@ router.get("/", (req, res) => {
 router.get("/teachers", (req, res) => {
   Teacher.find({}, (error, allTeachers) => {
     // console.log(allTeachers);
-    res.render("index.ejs", { teachers: allTeachers });
+    res.render("index.ejs", { teachers: allTeachers, title: "HomePage" });
   });
 });
 //new
@@ -50,7 +50,7 @@ router.put("/teachers/:objId", (req, res) => {
 //create
 router.post("/teachers", (req, res) => {
   const createdYeacher = req.body;
-  teacher.create(createdYeacher, (error, createdTeacher) => {
+  Teacher.create(createdYeacher, (error, createdTeacher) => {
     res.redirect("/");
   });
 });
