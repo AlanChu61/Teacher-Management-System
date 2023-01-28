@@ -3,7 +3,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const teacherRouter = require("./controller/teacher");
-const { urlencoded } = require("express");
+const userRouter = require("./controller/user");
+const bodyParser = require("body-parser");
 
 //initial the application
 const app = express();
@@ -22,9 +23,12 @@ db.on("error", (err) => console.log(err.message + " is mongo not running?"));
 db.on("connected", () => console.log("mongoDB connected"));
 
 //middleware
-app.use(urlencoded({ extended: true }));
+app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(teacherRouter);
+app.use(userRouter);
+
 //Listerning
 app.listen(PORT, () => {
   console.log(`Server is listening on PORT: ${PORT}`);
