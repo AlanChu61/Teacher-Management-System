@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: azure;
+  min-height: 100vh;
+}
+h1 {
+  text-align: center;
+}
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+nav a {
+  text-decoration: none;
+  display: block;
+  padding: 15px 25px;
+  text-align: center;
+  background-color: rgb(189, 185, 185);
+  color: #464141;
+  margin: 0;
+}
+nav a:hover {
+  background-color: #777777;
+  color: #ffffff;
+}
+.indeximg img {
+  width: 100px;
+  height: 100px;
+}
+
+.teacherContainer {
+  background-color: antiquewhite;
+  margin: 10px;
+  border-radius: 10px;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 10px;
+}
+.teacher {
+  display: flex;
+  flex-direction: column;
+}
+.btn {
+  border-radius: 5px;
+  text-align: center;
+}
+#addNewBtn {
+  color: red;
+}
+.showTeacher {
+  width: 75%;
+  height: 75%;
+  background-color: antiquewhite;
+  margin: auto;
+  border-radius: 10px;
+  text-align: center;
+}
+.showImg img {
+  width: 20%;
+  height: 20%;
+  border-radius: 10px;
+}
+.showBtnContan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
