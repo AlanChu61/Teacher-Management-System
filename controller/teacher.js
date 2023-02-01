@@ -36,7 +36,7 @@ router.delete("/teachers/:objId", (req, res) => {
 });
 //update
 router.put("/teachers/:objId", (req, res) => {
-  console.log(req.body);
+  //console.log(req.body);
   const updateTeacher = req.body;
   Teacher.findByIdAndUpdate(
     req.params.objId,

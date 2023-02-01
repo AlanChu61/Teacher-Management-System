@@ -2,6 +2,7 @@
 <html lang="en">
   <%- include("./partials/head") %>
   <body>
+    <%- include("./partials/nav") %>
     <div class="showTeacher center-in-center">
       <div class="showImg">
         <img src="<%=teacher.img%>" />
@@ -14,13 +15,16 @@
       </div>
     </div>
     <div class="showBtnContan">
+      <% if(user!=null){%>
       <form action="/teachers/<%=teacher.id%>/edit">
         <input type="submit" value="Edit" />
       </form>
       <form action="/teachers/<%=teacher._id%>?_method=DELETE" method="POST">
         <input type="submit" value=" X " />
       </form>
+      <%}%>
     </div>
+
     <form action="/teachers">
       <div class="btn">
         <input type="submit" value="See Other Teacher" />

@@ -1,0 +1,9 @@
+<nav>
+  <a href="/teachers">HomePage</a>
+  <% if (user==null){%>
+  <a href="/login">Login</a>
+  <%} else{%>
+  <a href="/logout">Logout</a>
+  <a href="/signup">Sign up</a>
+  <%}%>
+</nav>

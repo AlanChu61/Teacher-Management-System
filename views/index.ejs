@@ -2,14 +2,8 @@
 <html lang="en">
 <%- include("./partials/head") %>
   <body>
-    <h1>Welcome to GotCha Academy</h1>
-    <nav>
-        <a href="/teachers">HomePage</a>
-        <a href="/signup">Sign up</a>
-        <a href:"/">Login</a>
-        <a href:"/">Login out</a>      
-    </nav>
-    
+    <h1>Welcome to Teacher Management System</h1>
+    <%- include("./partials/nav") %>
     <div class = "teacherContainer">
             <%teachers.forEach((teacher)=>{%>
                 <div class="teacher">
@@ -29,10 +23,10 @@
             <%})%>
         
       </div>
-
-    <form action="/teachers/new">
-      <div class = "btn" ><input id="addNewBtn"  type="submit" value="Add New Teacher" /></div>
-        
-    </form>
+      <% if (user != null){%>
+        <form action="/teachers/new">
+          <div class = "btn" ><input id="addNewBtn"  type="submit" value="Add New Teacher" /></div>
+        </form>
+      <%}%>
   </body>
 </html>
