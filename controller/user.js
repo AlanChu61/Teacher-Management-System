@@ -14,7 +14,7 @@ router.post("/signup", (req, res) => {
   req.body.password = hashedPassword;
   User.create(req.body, (err, newUser) => {
     req.session.userId = newUser._id;
-    res.redirect("/login");
+    res.redirect("/teachers");
   });
 });
 
