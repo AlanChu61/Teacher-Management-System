@@ -11,8 +11,8 @@ Used: HTML, CSS, node.JS, express, mongoose
 
 # Screenshots
 
-[](./index.png)
-[](./show.png)
+![](https://github.com/AlanChu61/Teacher-Management-System/blob/main/show.png)
+![](https://github.com/AlanChu61/Teacher-Management-System/blob/main/index.png)
 
 # Getting Started:
 
