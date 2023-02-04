@@ -45,7 +45,7 @@ router.get("/teachers", (req, res) => {
 
 //new
 router.get("/teachers/new", (req, res) => {
-  res.render("new.ejs");
+  res.render("new.ejs", { title: "Add New Teacher" });
 });
 
 //delete
@@ -77,7 +77,10 @@ router.post("/teachers", (req, res) => {
 //edit
 router.get("/teachers/:objId/edit", (req, res) => {
   Teacher.findById(req.params.objId, (error, foundTeacher) => {
-    res.render("edit.ejs", { teacher: foundTeacher });
+    res.render("edit.ejs", {
+      teacher: foundTeacher,
+      title: `Edit ${foundTeacher.name}'s Info`,
+    });
   });
 });
 //show
@@ -85,6 +88,7 @@ router.get("/teachers/:objId", (req, res) => {
   Teacher.findById(req.params.objId, (error, foundTeacher) => {
     res.render("show.ejs", {
       teacher: foundTeacher,
+      title: `${foundTeacher.name}'s Info`,
     });
   });
 });

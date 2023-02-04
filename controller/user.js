@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 
 // Sign up users
 router.get("/signup", (req, res) => {
-  res.render("signup.ejs");
+  res.render("signup.ejs", { title: "Sign up" });
 });
 
 //handle form submission
@@ -20,7 +20,7 @@ router.post("/signup", (req, res) => {
 
 //Login Users
 router.get("/login", (req, res) => {
-  res.render("login.ejs");
+  res.render("login.ejs", { title: "Login" });
 });
 // handle form submission
 router.post("/login", (req, res) => {
