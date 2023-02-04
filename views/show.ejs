@@ -3,31 +3,34 @@
   <%- include("./partials/head") %>
   <body>
     <%- include("./partials/nav") %>
+    <h1>Here is <%=teacher.name%>'s Info:</h1>
     <div class="showTeacher center-in-center">
       <div class="showImg">
         <img src="<%=teacher.img%>" />
       </div>
-      Name: <%=teacher.name%>
-      <div class="teacher">
+
+      <div class="showInfo">
+        <li>Name: <%=teacher.name%></li>
         <li>Highest Degree: <%=teacher.highestDegree%></li>
         <li>Subjects: <%=teacher.subjects%></li>
         <li>Description: <%=teacher.description%></li>
       </div>
     </div>
+    <br />
+
     <div class="showBtnContan">
       <% if(user!=null){%>
       <form action="/teachers/<%=teacher.id%>/edit">
-        <input type="submit" value="Edit" />
+        <input class="showBtn" id="edit" type="submit" value="Edit" />
       </form>
       <form action="/teachers/<%=teacher._id%>?_method=DELETE" method="POST">
-        <input type="submit" value=" X " />
+        <input class="showBtn" id="remove" type="submit" value=" X " />
       </form>
       <%}%>
     </div>
-
     <form action="/teachers">
       <div class="btn">
-        <input type="submit" value="See Other Teacher" />
+        <input class="showBtn" type="submit" value="See Other Teacher" />
       </div>
     </form>
   </body>

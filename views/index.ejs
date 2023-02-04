@@ -2,8 +2,9 @@
 <html lang="en">
 <%- include("./partials/head") %>
   <body>
-    <h1>Welcome to Teacher Management System</h1>
     <%- include("./partials/nav") %>
+    <h1>Welcome to Teacher Management System</h1>
+
     <div class = "teacherContainer">
             <%teachers.forEach((teacher)=>{%>
                 <div class="teacher">
@@ -23,10 +24,20 @@
             <%})%>
         
       </div>
+
+      <h1>View Teachers by Subject</h1> 
+      <div class = "btn" >
+      <button onclick="window.location.href='/teachers?subject=math'">Math</button>
+      <button onclick="window.location.href='/teachers?subject=physics'">Physics</button>
+      <button onclick="window.location.href='/teachers?subject=chemistry'">Chemistry</button>
+      <button onclick="window.location.href='/teachers?subject=computer+science'">Computer Science</button>
+      <button onclick="window.location.href='/teachers?subject=economics'">Economics</button>
+    </div>
       <% if (user != null){%>
         <form action="/teachers/new">
           <div class = "btn" ><input id="addNewBtn"  type="submit" value="Add New Teacher" /></div>
         </form>
       <%}%>
+      <%- include("./partials/footer") %>
   </body>
 </html>

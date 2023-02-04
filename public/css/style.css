@@ -8,6 +8,8 @@ body {
 }
 h1 {
   text-align: center;
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
 nav {
   display: flex;
@@ -28,8 +30,9 @@ nav a:hover {
   color: #ffffff;
 }
 .indeximg img {
-  width: 100px;
-  height: 100px;
+  width: 125px;
+  height: 125px;
+  border-radius: 10px;
 }
 
 .teacherContainer {
@@ -42,31 +45,153 @@ nav a:hover {
   grid-gap: 10px;
 }
 .teacher {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 2fr 2fr 1fr;
 }
 .btn {
   border-radius: 5px;
   text-align: center;
+  padding: 10px;
 }
 #addNewBtn {
-  color: red;
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  border-radius: 500px;
+  transition-property: background-color, border-color, color, box-shadow, filter;
+  transition-duration: 0.3s;
+  border: 1px solid transparent;
+  letter-spacing: 2px;
+  min-width: 160px;
+  text-transform: uppercase;
+  white-space: normal;
+  font-weight: 700;
+  text-align: center;
+  padding: 17px 48px;
+  color: #fff;
+  background-color: #1ed760;
+  height: 48px;
 }
 .showTeacher {
-  width: 75%;
-  height: 75%;
+  width: 60%;
+  height: 60%;
   background-color: antiquewhite;
   margin: auto;
-  border-radius: 10px;
   text-align: center;
+  border-radius: 10px;
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
 }
 .showImg img {
   width: 20%;
   height: 20%;
   border-radius: 10px;
 }
+.showInfo {
+  font-size: 25px;
+}
 .showBtnContan {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.showBtn {
+  display: inline-block;
+  outline: 0;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid #babfc3;
+  padding: 7px 16px;
+  min-height: 36px;
+  min-width: 36px;
+  color: #202223;
+  background: #ffffff;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 14px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 0px 0px;
+}
+.showBtn#remove {
+  background: red;
+  color: white;
+}
+.showBtn#edit {
+  background: rgb(132, 220, 132);
+  color: black;
+}
+button {
+  cursor: pointer;
+  outline: 0;
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 16px;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+#detailsBtn {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 14px 24px;
+  border: none;
+  transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s,
+    -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s;
+  background: linear-gradient(
+    to right,
+    rgb(230, 30, 77) 0%,
+    rgb(227, 28, 95) 50%,
+    rgb(215, 4, 102) 100%
+  );
+  color: #fff;
+}
+.addNewTeacher,
+.editTeacher,
+.signupAdmin {
+  margin: auto;
+  width: 50%;
+}
+.addNewTeacher input[type="text"],
+.editTeacher input[type="text"],
+.signupAdmin input[type="email"],
+.signupAdmin input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+.addNewTeacher input[type="textarea"],
+.editTeacher input[type="textarea"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+input[type="textarea"] {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  resize: none;
+}
+footer {
+  border-top-style: solid;
+  border-color: rgba(128, 128, 128, 0.29);
+  margin: auto;
+  width: 100%;
+  color: gray;
+  text-align: center;
 }

@@ -1,20 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include("./partials/head") %>
+
   <body>
+    <%- include("./partials/nav") %>
     <h1>You are adding new teacher</h1>
-    <form action="/teachers" method="post"> 
+    <form action="/teachers" method="post">
       <div class="addNewTeacher">
-      <label> Name: <input type="text" name="name" /> </label> <br />
-      <label> Highest Degree: <input type="text" name="highestDegree" /> </label
-      ><br />
-      <label> Photo: <input type="text" name="img" /> </label><br />
-      <label> Subjects: <input type="text" name="subjects" /> </label><br />
-      <label> Description: <input type="text" name="description" /> </label
-      ><br />
-      <div class="btn"><input type="submit" value=" + " /></div>
-      
+        <label>
+          Name:
+          <input type="text" name="name" placeholder="Your Name.." required />
+        </label>
+        <br />
+        <label>
+          Highest Degree:
+          <input
+            type="text"
+            name="highestDegree"
+            placeholder="MS in fields"
+          /> </label
+        ><br />
+        <label> Photo: <input type="text" name="img" /> </label><br />
+        <label>
+          Subjects:
+          <input
+            type="text"
+            name="subjects"
+            placeholder="Math, Physics, Chemistry"
+          /> </label
+        ><br />
+        <label>
+          Description: <input type="textarea" name="description" /> </label
+        ><br />
+        <%if(user!=null){%>
+        <div class="btn">
+          <input class="showBtn" id="addNewBtn" type="submit" value="ADD" />
+        </div>
+        <%}%>
+      </div>
     </form>
-  </div>
   </body>
 </html>

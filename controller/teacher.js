@@ -16,13 +16,33 @@ router.get("/teachers/seed", (req, res) => {
 router.get("/", (req, res) => {
   res.redirect("/teachers");
 });
+
 //index
 router.get("/teachers", (req, res) => {
   Teacher.find({}, (error, allTeachers) => {
-    // console.log(allTeachers);
-    res.render("index.ejs", { teachers: allTeachers, title: "HomePage" });
+    //console.log(Object.keys(req.query).length == 0);
+    if (Object.keys(req.query).length == 0) {
+      res.render("index.ejs", { teachers: allTeachers, title: "HomePage" });
+    } else {
+      const subject = req.query.subject;
+      const teacherArr = [];
+      for (let teacher of allTeachers) {
+        const teacherSubList = teacher.subjects.split(", ");
+        // console.log(teacherSubList);
+        // for (let i = 0; i <= teacherSubList.length; i++) {
+        //   console.log(teacherSubList[i]);
+        //   // teacherSubList[i] = teacherSubList[i].trim();
+        // }
+        if (teacherSubList.includes(subject)) {
+          teacherArr.push(teacher);
+        }
+      }
+      // console.log(teacherArr);
+      res.render("subject.ejs", { teachers: teacherArr, title: subject });
+    }
   });
 });
+
 //new
 router.get("/teachers/new", (req, res) => {
   res.render("new.ejs");

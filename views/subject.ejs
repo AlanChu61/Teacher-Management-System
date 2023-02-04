@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partials/head") %>
+  <%- include("./partials/nav") %>
+
+    <h1>We have <%=teachers.length%> teacher(s) for <%=title%></h1>
+    <div class = "teacherContainer">
+            <%teachers.forEach((teacher)=>{%>
+                <div class="teacher">
+                    <div class="indeximg">
+                        <img src="<%=teacher.img%>"/>
+                      </div>
+
+<div class="indexTeacherInfo">
+    <%=teacher.name%> </br>
+    <%=teacher.highestDegree%> </br>
+    Subject: <%=teacher.subjects%></br>
+</div>                      
+<form action="/teachers/<%=teacher._id%>">
+                    <input id="detailsBtn" type="submit" value="More Details" />
+                  </form>
+                </div>
+            <%})%>
+        
+      </div>
+      <form action="/teachers/">
+        <div class = "btn" ><input class="showBtn"  type="submit" value="HomePgae" /></div>
+      </form>
+  </body>
+</html>
