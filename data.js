@@ -2,7 +2,7 @@ module.exports = [
   {
     name: "Alan Chu",
     highestDegree: "MCIT at UPenn",
-    img: "https://res.cloudinary.com/dnn0tzpjf/image/upload/v1674702525/Screenshot_2023-01-26_at_11.07.08_hnzcxc.png",
+    img: "https://res.cloudinary.com/dnn0tzpjf/image/upload/v1674702525/Alan01.png",
     subjects: "math, physics, computer science",
     description: "Here is the description for Alan",
   },
