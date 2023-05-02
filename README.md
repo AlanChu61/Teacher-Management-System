@@ -7,7 +7,7 @@ This project aims to build a teacher system.
 
 # Technologies Used
 
-Used: HTML, CSS, Node.js, express, mongoose
+Used: HTML, CSS, Node.js, Express, Mongoose
 
 # Screenshots
 
