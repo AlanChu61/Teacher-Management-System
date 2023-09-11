@@ -79,7 +79,7 @@ nav a:hover {
   height: 60%;
   background-color: antiquewhite;
   margin: auto;
-  text-align: center;
+  text-align: left;
   border-radius: 10px;
   box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
 }
